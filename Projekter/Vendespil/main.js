@@ -57,7 +57,8 @@ function gameStart() {
     document.getElementById("img16").alt = `${stats.inviFoto[15]}.png`;
     document.getElementById("score").innerHTML = `Score: ${stats.currentScore} pairs`;
 
-    setInterval(gameTimer, 1000)
+    var myVar = setInterval(gameTimer, 1000);
+    document.getElementById('start-btn').disabled = 'disabled';
 };
 
 function Chooser(para) {
@@ -79,13 +80,20 @@ function saver(chose) {
     
 }
 
+function checkScore () {
+    if (stats.currentScore == 8) {
+        alert(`You won in ${stats.currentTime} seconds! Refresh to play again!`);
+        
+    } else {}
+}
+
 async function choiceEval(choi1, choi2) {
     await sleep(300);
     if(choi1 == choi2) {
         stats.currentScore += 1;
         document.getElementById("score").innerHTML = `Score: ${stats.currentScore} pairs`;
         document.getElementById("timer2").innerHTML = `${stats.chosenImages}`;
-        document.getElementById(`img${chosenField[0]}`).style.visibility = "hidden"
+        document.getElementById(`img${stats.chosenField[0]}`).style.visibility = "hidden"
         document.getElementById(`img${stats.chosenField[1]}`).style.visibility = "hidden"
         stats.chosenImages = [];
         stats.chosenField = [];
@@ -96,6 +104,7 @@ async function choiceEval(choi1, choi2) {
         stats.chosenImages = [];
         stats.chosenField = [];
     }
+    checkScore();
 }
     
 

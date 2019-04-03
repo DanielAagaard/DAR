@@ -1,4 +1,4 @@
-let coinAmount = 99999999;
+let coinAmount = 1;
 let cpc = 1;
 
 let cps = 1;                        // Værdi tilføjet pr. interval
