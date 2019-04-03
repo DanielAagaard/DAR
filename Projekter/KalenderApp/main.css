@@ -1,0 +1,88 @@
+html {
+    background: url('./Calendar-Background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body {
+    transition: 500ms linear;
+}
+
+#flex-container, #topbox {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.205);
+    border-radius: 5px;
+    margin: 0 auto;
+    width: 90%;
+    padding: 15px;
+}
+  
+#flex-container > div {
+    flex: 1 0 13%;
+    max-width: 14.2%;
+    text-align: center;
+    line-height: 60px;
+    font-size: 20px;
+    padding: 0px;
+    transition: 200ms linear;
+}
+
+#topbox {
+    min-width: 100%;
+    justify-content: center;
+    transition: 200ms linear;
+    display: flex;
+}
+
+#topbox > div {
+    flex: 1 0 33%;
+    transition: 200ms linear;
+}
+
+#daybox {
+    min-width: 100%;
+    display: flex;
+}
+
+#daybox > div {
+    flex: 1 0 13%;
+}
+
+#leftArrow:hover, #rightArrow:hover {
+    font-size: 40px !important;
+}
+
+#leftArrow, #rightArrow {
+    cursor: pointer;
+}
+
+#flex-container div:hover {
+    background-color: lightgray;
+    border-radius: 5px;
+}
+
+#flex-container div:hover#topbox {
+    background-color: none;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0px;
+    right: 20px;
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+    #flex-container > div {
+        font-size: 15px;
+    }
+}
+/* Large desktop */
+@media (min-width: 1200px) {
+    #flex-container > div {
+        font-size: 25px;
+    }
+}
